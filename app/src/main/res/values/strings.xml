@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Homework1.2.1</string>
+    <string name="layout_name">Подписка</string>
+    <string name="txt_intro">Получайте выгодные предложения и узнавайте о скидках первым</string>
+    <string name="txt_name">Имя пользователя</string>
+    <string name="txt_email">Электронная почта</string>
+    <string name="btn_subscribe">Подписаться</string>
+    <string name="btn_reset">Очистить</string>
+    <string name="btn_result_text">Подписка на рассылку успешно оформлена для пользователя %1$s на E-mail %2$s</string>
+</resources>

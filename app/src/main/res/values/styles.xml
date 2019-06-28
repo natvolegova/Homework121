@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="Homeworktheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/TextColor</item>
+    </style>
+    <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/TitleColor</item>
+        <item name="android:padding">24dp</item>
+    </style>
+    <style name="textHeading">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+    <style name="btnPrimary">
+        <item name="android:background">@drawable/rounded</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="input">
+        <item name="android:background">@drawable/rounded_input</item>
+        <item name="android:padding">6dp</item>
+    </style>
+</resources>
