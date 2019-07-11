@@ -5,44 +5,51 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.view.View.OnClickListener;
+
 import android.widget.TextView;
 import android.widget.EditText;
 import java.lang.String;
 
-public class MainActivity extends AppCompatActivity implements OnClickListener{
+public class MainActivity extends AppCompatActivity {
+    private  Button btnSubscribe;
+    private Button btnReset;
+    private TextView output;
+    private EditText name;
+    private EditText email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         //объявили переменные
-        Button btnSubscribe = findViewById(R.id.btnSubscribe);
-        Button btnReset = findViewById(R.id.btnReset);
+        initView();
         //объявили методы
-        btnSubscribe.setOnClickListener(this);
-        btnReset.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View view){
-        TextView output = findViewById(R.id.txtResult);
-        EditText name = findViewById(R.id.inputName);
-        EditText email = findViewById(R.id.inputEmail);
-
-        switch (view.getId()){
-            case R.id.btnSubscribe:
-                String result = getString(R.string.btn_result_text);
-                result = String.format(result, name.getText().toString(), email.getText().toString());
-                output.setText(result);
-                break;
-            case R.id.btnReset:
+        btnSubscribe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String result_name=name.getText().toString();
+                String result_email = email.getText().toString();
+                if(!result_name.equals("") && !result_email.equals("")){
+                    String result = String.format(getString(R.string.btn_result_text), result_name, result_email);
+                    output.setText(result);
+                }
+            }
+        });
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 output.setText("");
                 name.setText("");
                 email.setText("");
-                break;
-        }
+            }
+        });
+    }
+    private void initView(){
+        btnSubscribe = findViewById(R.id.btnSubscribe);
+        btnReset = findViewById(R.id.btnReset);
+        output = findViewById(R.id.txtResult);
+        name = findViewById(R.id.inputName);
+        email = findViewById(R.id.inputEmail);
     }
 
 }
